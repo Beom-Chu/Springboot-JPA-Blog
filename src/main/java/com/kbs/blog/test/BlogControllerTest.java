@@ -12,7 +12,10 @@ public class BlogControllerTest {
   @GetMapping("/hello")
   @ApiOperation(value="테스트 Hello", notes="테스트로 Hello를 반환한다.")
   public String hello() {
-    return "<h1>hello spring boot!</h1>";
+    
+    Member m = Member.builder().username("a").password("123").build();
+    
+    return "<h1>hello spring boot!</h1>"+m.getUsername()+","+m.getPassword();
   }
   
   @GetMapping("/hello2")
