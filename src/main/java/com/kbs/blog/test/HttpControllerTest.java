@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
@@ -20,15 +21,16 @@ public class HttpControllerTest {
 
   @PostMapping("/post")
   @ApiOperation(value = "http post", notes = "http post test.")
-  public String postTest(Member m) {
+  public String postTest(@RequestBody Member m) {
     return String.format("post 요청 : %s, %s, %s, %s", m.getId(), m.getUsername(), m.getEmail(),
         m.getPassword());
   }
 
   @PutMapping("/put")
   @ApiOperation(value = "http put", notes = "http put test.")
-  public String putTest() {
-    return "put 요청";
+  public String putTest(@RequestBody Member m) {
+    return String.format( "put 요청 : %s, %s, %s, %s", m.getId(), m.getUsername(), m.getEmail(),
+        m.getPassword());
   }
 
   @DeleteMapping("/delete")
