@@ -24,7 +24,8 @@ spring:
     hibernate:
       ddl-auto: create
       naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #엔티티 생성시 변수명 그대로 DB 필드 생성.
+        #physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy #엔티티 생성시 변수명에 언더스코어를 붙여줌. 예) createDate -> create_date
       use-new-id-generator-mappings: false
     show-sql: true
     properties:
