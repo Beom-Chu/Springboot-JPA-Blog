@@ -71,7 +71,7 @@ public class DummyControllerTest {
 
 
   @PostMapping("/join")
-  public String join(User user) {
+  public String join(@RequestBody User user) {
     System.out.println(user.toString());
 
     user.setRole(RoleType.USER);
