@@ -14,7 +14,23 @@ let index = {
 
 		console.log(data);
 
-		//		$.ajax().done().fail();		
+		$.ajax({
+			type: "POST",
+			url: "/blog/api/user",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",	//요청 Body 타입
+			dataType: "json"	//응답 타입
+		}).done(function(resp) {
+
+			alert("회원가입이 완료되었습니다.");
+			console.log(resp);
+			location.href = "/blog";
+
+		}).fail(function(error) {
+
+			alert(JSON.stringify(error));
+
+		});
 	}
 }
 
