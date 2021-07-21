@@ -21,10 +21,15 @@ let index = {
 			contentType: "application/json; charset=utf-8",	//요청 Body 타입
 			dataType: "json"	//응답 타입
 		}).done(function(resp) {
-
-			alert("회원가입이 완료되었습니다.");
+			
 			console.log(resp);
-			location.href = "/blog";
+			
+			if(resp.status == 200){
+				alert("회원가입이 완료되었습니다.");
+				location.href = "/blog";
+			} else {
+				alert(resp.data);
+			}
 
 		}).fail(function(error) {
 
