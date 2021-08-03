@@ -20,7 +20,7 @@ let index = {
 
 		$.ajax({
 			type: "POST",
-			url: "/blog/api/user",
+			url: "/api/user",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",	//요청 Body 타입
 			dataType: "json"	//응답 타입
@@ -30,7 +30,7 @@ let index = {
 			
 			if(resp.status == 200){
 				alert("회원가입이 완료되었습니다.");
-				location.href = "/blog";
+				location.href = "/";
 			} else {
 				alert(resp.data);
 			}
@@ -52,7 +52,7 @@ let index = {
 
 		$.ajax({
 			type: "POST",
-			url: "/blog/api/user/login",
+			url: "/api/user/login",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",	//요청 Body 타입
 			dataType: "json"	//응답 타입
@@ -62,7 +62,7 @@ let index = {
 			
 			if(resp.status == 200){
 				alert("로그인이 완료되었습니다.");
-				location.href = "/blog";
+				location.href = "/";
 			} else {
 				alert(resp.data);
 			}

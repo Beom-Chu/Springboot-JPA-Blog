@@ -37,7 +37,7 @@ public class UserApiController {
   @PostMapping("/api/user/login")
   public ResponseDto<Integer> login(@RequestBody User user, HttpSession session) {
     
-    System.out.println("/blog/api/user/login");
+    System.out.println("/api/user/login");
     
     User principal = userService.로그인(user); //principal 접근주체
     
