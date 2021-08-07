@@ -24,7 +24,7 @@ public class Board {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Long id;
 
   @Column(nullable = false, length = 100)
   private String title;
@@ -33,7 +33,7 @@ public class Board {
   private String content;
 
   @ColumnDefault("0")
-  private int count;
+  private Integer count;
 
   @ManyToOne(fetch = FetchType.EAGER) //@ManyToOne 기본 : fetch = FetchType.EAGER : 즉시로딩
   @JoinColumn(name = "userId")

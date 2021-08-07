@@ -19,7 +19,7 @@ public class Reply {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
 
   @Column(nullable = false, length = 200)
   private String content;
