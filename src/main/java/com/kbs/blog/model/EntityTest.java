@@ -20,7 +20,7 @@ import lombok.Setter;
 public class EntityTest {
 
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
   
   private String name;
   
