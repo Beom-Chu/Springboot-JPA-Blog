@@ -34,4 +34,15 @@ public class Reply {
 
   @CreationTimestamp
   private Timestamp createDate;
+  
+  
+  /* 연관관계 편의 메소드 */
+  public void changeBoard(Board board) {
+    if(this.board != null) {
+      this.board.getReply().remove(this);
+    }
+    
+    this.board = board;
+    board.getReply().add(this);
+  }
 }
