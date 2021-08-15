@@ -142,8 +142,8 @@ public class AnythingTestController {
     String fileName = "noname";
     try {
       fileName = URLEncoder.encode(entityTest.getFileName(),"UTF-8");
-    } catch (Exception e1) {
-      e1.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
 
     filePathAndName += entityTest.getFileUniqueName(); // 첨부파일경로+첨부파일명
@@ -173,7 +173,7 @@ public class AnythingTestController {
     Resource resource = new InputStreamResource(Files.newInputStream(path));
     
     return ResponseEntity.ok()
-        .contentType(MediaType.parseMediaType("application/octet-stream"))
+        .contentType(MediaType.parseMediaType("application/octet-stream; charset=utf-8"))
         .header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename=\"" + URLEncoder.encode(entityTest.getFileName(),"UTF-8") + "\"")
         .body(resource);
   }
